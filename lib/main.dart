@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-const startAlignment = Alignment.topLeft;
-const endAlignment = Alignment.bottomLeft;
-
+import 'package:quiz/start_screen.dart';
 
 void main() {
   runApp(
@@ -11,39 +9,13 @@ void main() {
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.black, Colors.yellow],
-              begin: startAlignment,
-              end: endAlignment,
+              colors: [
+                Color.fromARGB(255, 78, 13, 151),
+                Color.fromARGB(255, 107, 15, 168),
+              ]
             ),
           ),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Image.asset(
-                  'assets/images/quiz-logo.png',
-                  width: 200,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                OutlinedButton(
-                  onPressed: null,
-                  style: OutlinedButton.styleFrom(
-                    padding: const EdgeInsets.only(
-                      right: 10,
-                      left: 10,
-                    ),
-                    foregroundColor: Colors.white,
-                    textStyle: const TextStyle(
-                      fontSize: 28,
-                    ),
-                  ),
-                  child: const Text('Start Quiz'),
-                ),
-              ],
-            ),
-          )
+          child: const StartScreen(),
         ),
       ),
     ),
